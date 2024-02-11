@@ -4,15 +4,51 @@ layout: default
 
 <div class="hero">
   <div class="hero-content">
-    <h1 class="hero-title">John & Jane's Wedding</h1>
-    <p class="hero-subtitle">Together forever, never apart. Maybe in distance, but never in heart.</p>
+    <h1 class="hero-title"></h1>
+    <p class="hero-subtitle"></p>
   </div>
 </div>
 
 <div class="container">
-  <h2 class="section-title">Save the Date</h2>
-  <p class="section-text">Saturday, May 20th, 2023</p>
-  <p class="section-text">Ceremony starts at 4:00 PM</p>
-  <p class="section-text">Venue: Beautiful Venue, City, Country</p>
+  <img src="/img/text.jpg" alt="Description of the image" class="section-image">
+  <div class="image-grid">
+    <img src="/img/DSCF1679.JPG" alt="Image 1" class="gallery-image">
+    <img src="/img/DSCF1679.JPG" alt="Image 2" class="gallery-image">
+    <img src="/img/DSCF1679.JPG" alt="Image 3" class="gallery-image">
+    <img src="/img/DSCF1679.JPG" alt="Image 4" class="gallery-image">
+    <img src="/img/DSCF1679.JPG" alt="Image 5" class="gallery-image">
+    <img src="/img/DSCF1679.JPG" alt="Image 6" class="gallery-image">
+    <img src="/img/DSCF1679.JPG" alt="Image 7" class="gallery-image">
+    <img src="/img/DSCF1679.JPG" alt="Image 8" class="gallery-image">
+    <img src="/img/DSCF1679.JPG" alt="Image 9" class="gallery-image">
+  </div>
+  <div class="video-container">
+    <video controls>
+      <source src="/vid/berlin.mp4" type="video/mp4">
+    </video>
+  </div>
 </div>
+<div class="overlay" id="overlay"></div>
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const images = document.querySelectorAll('.gallery-image');
+  const overlay = document.getElementById('overlay');
+
+  images.forEach(image => {
+    image.addEventListener('click', () => {
+      const magnifiedImage = document.createElement('img');
+      magnifiedImage.src = image.src;
+      magnifiedImage.alt = image.alt;
+      magnifiedImage.classList.add('magnified-image');
+      overlay.innerHTML = ''; // Clear any existing content
+      overlay.appendChild(magnifiedImage);
+      overlay.style.display = 'block';
+    });
+  });
+
+  overlay.addEventListener('click', () => {
+    overlay.style.display = 'none';
+  });
+});
+</script>
