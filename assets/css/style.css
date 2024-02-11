@@ -6,7 +6,7 @@ body {
 
 .hero {
   background-image: url('../../img/DSCF1679.JPG');
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   display: flex;
