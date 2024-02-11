@@ -8,6 +8,7 @@ body {
   background-image: url('../../img/DSCF1679.JPG');
   background-size: cover;
   background-position: center;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
