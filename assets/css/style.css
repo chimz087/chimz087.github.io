@@ -5,7 +5,7 @@ body {
 }
 
 .hero {
-  background-image: url('https://source.unsplash.com/1600x900/?wedding');
+  background-image: url('/img/DSCF1679.JPG');
   background-size: cover;
   height: 100vh;
   display: flex;
@@ -42,5 +42,12 @@ body {
 .section-text {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  .hero {
+    background-image: url('/img/DSCF1679.JPG');
+  }
 }
 
