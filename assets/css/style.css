@@ -6,11 +6,13 @@ body {
 
 .hero {
   background-image: url('../../img/DSCF1679.JPG');
-  background-size: contain;
+  background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: auto;
 }
 
 .hero-content {
