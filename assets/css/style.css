@@ -103,7 +103,8 @@ html {
   width: 100%; /* Adjust the width as needed */
   max-width: 800px; /* Set a maximum width to prevent the video from becoming too large on large screens */
   margin: 0 auto; /* Center the video horizontally */
-  margin-top: 3rem
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 
 video {
@@ -114,11 +115,6 @@ video {
 @media (max-width: 600px) {
   .hero {
     height: 80vh; /* Adjust height for small devices */
-  }
-
-  .hero-title {
-    font-size: 1.5rem;
-    margin-top: 0rem;
   }
 }
 
