@@ -122,15 +122,6 @@ html {
   font-size: 1.5rem;
 }
 
-.magnified-image {
-  max-width: 80%; /* Adjust maximum width of magnified image */
-  max-height: 80%; /* Adjust maximum height of magnified image */
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
 .video-container {
   width: 100%; /* Adjust the width as needed */
   max-width: 800px; /* Set a maximum width to prevent the video from becoming too large on large screens */
