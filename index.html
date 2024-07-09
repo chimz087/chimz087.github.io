@@ -1,54 +1,106 @@
 ---
 layout: default
 ---
-
-<div class="hero">
-  <div class="hero-content">
-    <h1 class="hero-title"></h1>
-    <p class="hero-subtitle"></p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Gallery with Swiper</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+  <div class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title"></h1>
+      <p class="hero-subtitle"></p>
+    </div>
   </div>
-</div>
 
-<div class="container">
-  <img src="/img/text.jpg" alt="Description of the image" class="section-image">
-  <div class="image-grid">
-    <img src="/img/DSCF1679.JPG" alt="Image 1" class="gallery-image">
-    <img src="/img/DSCF1679.JPG" alt="Image 2" class="gallery-image">
-    <img src="/img/DSCF1679.JPG" alt="Image 3" class="gallery-image">
-    <img src="/img/DSCF1679.JPG" alt="Image 4" class="gallery-image">
-    <img src="/img/DSCF1679.JPG" alt="Image 5" class="gallery-image">
-    <img src="/img/DSCF1679.JPG" alt="Image 6" class="gallery-image">
-    <img src="/img/DSCF1679.JPG" alt="Image 7" class="gallery-image">
-    <img src="/img/DSCF1679.JPG" alt="Image 8" class="gallery-image">
-    <img src="/img/DSCF1679.JPG" alt="Image 9" class="gallery-image">
+  <div class="container">
+    <img src="/img/text.jpg" alt="Description of the image" class="section-image">
+    <div class="image-grid">
+      <img src="/img/DSCF1679.JPG" alt="Image 1" class="gallery-image">
+      <img src="/img/DSCF1679.JPG" alt="Image 2" class="gallery-image">
+      <img src="/img/DSCF1679.JPG" alt="Image 3" class="gallery-image">
+      <img src="/img/DSCF1679.JPG" alt="Image 4" class="gallery-image">
+      <img src="/img/DSCF1679.JPG" alt="Image 5" class="gallery-image">
+      <img src="/img/DSCF1679.JPG" alt="Image 6" class="gallery-image">
+      <img src="/img/DSCF1679.JPG" alt="Image 7" class="gallery-image">
+      <img src="/img/DSCF1679.JPG" alt="Image 8" class="gallery-image">
+      <img src="/img/DSCF1679.JPG" alt="Image 9" class="gallery-image">
+    </div>
+    <div class="video-container">
+      <video controls>
+        <source src="/vid/berlin.mp4" type="video/mp4">
+      </video>
+    </div>
   </div>
-  <div class="video-container">
-    <video controls>
-      <source src="/vid/berlin.mp4" type="video/mp4">
-    </video>
+  <div class="overlay" id="overlay">
+    <div class="swiper-container">
+      <div class="swiper-wrapper"></div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+    <button class="close-button"><i class="fas fa-times"></i></button>
   </div>
-</div>
-<div class="overlay" id="overlay"></div>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const images = document.querySelectorAll('.gallery-image');
-  const overlay = document.getElementById('overlay');
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const images = document.querySelectorAll('.gallery-image');
+      const overlay = document.getElementById('overlay');
+      const swiperWrapper = overlay.querySelector('.swiper-wrapper');
+      const closeButton = overlay.querySelector('.close-button');
 
-  images.forEach(image => {
-    image.addEventListener('click', () => {
-      const magnifiedImage = document.createElement('img');
-      magnifiedImage.src = image.src;
-      magnifiedImage.alt = image.alt;
-      magnifiedImage.classList.add('magnified-image');
-      overlay.innerHTML = ''; // Clear any existing content
-      overlay.appendChild(magnifiedImage);
-      overlay.style.display = 'block';
+      let swiper;
+
+      images.forEach((image, index) => {
+        image.addEventListener('click', () => {
+          swiperWrapper.innerHTML = '';
+
+          images.forEach(img => {
+            const slide = document.createElement('div');
+            slide.classList.add('swiper-slide');
+            const magnifiedImage = document.createElement('img');
+            magnifiedImage.src = img.src;
+            magnifiedImage.alt = img.alt;
+            slide.appendChild(magnifiedImage);
+            swiperWrapper.appendChild(slide);
+          });
+
+          if (!swiper) {
+            swiper = new Swiper('.swiper-container', {
+              slidesPerView : 1,
+              slidesPerGroup : 1,
+              spaceBetween : -50,
+              loopFillGroupWithBlank : true,
+              loop: true,
+              pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+              },
+              navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+              },
+            });
+          } else {
+            swiper.update();
+            swiper.slideTo(index + 1);
+          }
+
+          overlay.style.display = 'block';
+        });
+      });
+      closeButton.addEventListener('click', () => {
+        overlay.style.display = 'none';
+      });
     });
-  });
+  </script>
+</body>
+</html>
 
-  overlay.addEventListener('click', () => {
-    overlay.style.display = 'none';
-  });
-});
-</script>
