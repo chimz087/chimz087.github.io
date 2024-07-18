@@ -230,14 +230,15 @@ video {
 /* Larger size for large devices */
 @media (min-width: 1200px) {
   .dropdown button {
-    padding: 18px 48px; /* Adjust padding for large devices */
+    padding: 18px 64px; /* Adjust padding for large devices */
     font-size: 18px; /* Adjust font size for large devices */
+    letter-spacing: 3px;
   }
   .dropdown-left {
-    padding-left: 80px; /* Add padding to the left for the left dropdown */
+    padding-left: 40px; /* Add padding to the left for the left dropdown */
   }
   .dropdown-right {
-    padding-right: 80px; /* Add padding to the right for the right dropdown */
+    padding-right: 40px; /* Add padding to the right for the right dropdown */
   }
   .dropdown-content {
     min-width: 200px; /* Increase the width for large devices */

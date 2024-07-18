@@ -54,7 +54,6 @@
           <button onclick="toggleDropdown('dropdownContentRight')">신부측 마음 전하실 곳</button>
           <div class="dropdown-content" id="dropdownContentRight">
             <p></p>
-            <p></p>
           </div>
         </div>
       </div>
@@ -126,6 +125,7 @@
     function toggleDropdown(id) {
       var dropdownContent = document.getElementById(id);
       dropdownContent.classList.toggle("show");
+      dropdownContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   </script>
 </body>
