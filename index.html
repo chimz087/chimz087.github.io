@@ -39,6 +39,26 @@
         <source src="/vid/berlin.mp4" type="video/mp4">
       </video>
     </div>
+    <div class="dropdown-container">
+      <div class="dropdown-left">
+        <div class="dropdown">
+          <button onclick="toggleDropdown('dropdownContentLeft')">신랑측 마음 전하실 곳</button>
+          <div id="dropdownContentLeft" class="dropdown-content">
+            <p>국민 | 436902-04-070884 </p>
+            <p>김제숭</p>
+          </div>
+        </div>
+      </div>
+      <div class="dropdown-right">
+        <div class="dropdown">
+          <button onclick="toggleDropdown('dropdownContentRight')">신부측 마음 전하실 곳</button>
+          <div class="dropdown-content" id="dropdownContentRight">
+            <p></p>
+            <p></p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="overlay" id="overlay">
     <div class="swiper-container">
@@ -49,6 +69,7 @@
     </div>
     <button class="close-button"><i class="fas fa-times"></i></button>
   </div>
+
 
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script>
@@ -102,6 +123,10 @@
         overlay.style.display = 'none';
       });
     });
+    function toggleDropdown(id) {
+      var dropdownContent = document.getElementById(id);
+      dropdownContent.classList.toggle("show");
+    }
   </script>
 </body>
 </html>
