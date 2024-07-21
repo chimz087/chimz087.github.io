@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>김도형♥︎최주영 결혼합니다</title>
   <meta property="og:title" content="김도형♥︎최주영 결혼합니다">
-  <meta property="og:image" content="https://chimz087.github.io/img/DSCF1679.JPG">
+  <meta property="og:image" content="https://chimz087.github.io/img/IMG_2300_3.JPG">
   <meta property="og:type" content="website" />
   <meta property="og:image:type" content="image/jpeg">
   <meta property="og:url" content="https://chimz087.github.io">
@@ -24,20 +24,15 @@
   <div class="container">
     <img src="/img/text.jpg" alt="Description of the image" class="section-image">
     <div class="image-grid">
-      <img src="/img/DSCF1679.JPG" alt="Image 1" class="gallery-image">
-      <img src="/img/DSCF1679.JPG" alt="Image 2" class="gallery-image">
-      <img src="/img/DSCF1679.JPG" alt="Image 3" class="gallery-image">
-      <img src="/img/DSCF1679.JPG" alt="Image 4" class="gallery-image">
-      <img src="/img/DSCF1679.JPG" alt="Image 5" class="gallery-image">
-      <img src="/img/DSCF1679.JPG" alt="Image 6" class="gallery-image">
-      <img src="/img/DSCF1679.JPG" alt="Image 7" class="gallery-image">
-      <img src="/img/DSCF1679.JPG" alt="Image 8" class="gallery-image">
-      <img src="/img/DSCF1679.JPG" alt="Image 9" class="gallery-image">
-    </div>
-    <div class="video-container">
-      <video controls>
-        <source src="/vid/berlin.mp4" type="video/mp4">
-      </video>
+      <img src="/img/0126039E.JPG" alt="Image 1" class="gallery-image">
+      <img src="/img/1649059531.JPG" alt="Image 2" class="gallery-image">
+      <img src="/img/1666583942.JPG" alt="Image 3" class="gallery-image">
+      <img src="/img/7A872E21.JPG" alt="Image 4" class="gallery-image">
+      <img src="/img/77974A8B.JPG" alt="Image 5" class="gallery-image">
+      <img src="/img/IMG_5078.JPG" alt="Image 6" class="gallery-image">
+      <img src="/img/IMG_3731.JPG" alt="Image 7" class="gallery-image">
+      <img src="/img/52DF4DD5.jpg" alt="Image 8" class="gallery-image">
+      <img src="/img/IMG_7714.jpg" alt="Image 9" class="gallery-image">
     </div>
     <div class="dropdown-container">
       <div class="dropdown-left">
@@ -96,24 +91,19 @@
 
           if (!swiper) {
             swiper = new Swiper('.swiper-container', {
-              slidesPerView : 1,
-              slidesPerGroup : 1,
-              spaceBetween : -50,
-              loopFillGroupWithBlank : true,
-              loop: true,
-              pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-              },
               navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
               },
+              pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+              },
             });
-          } else {
-            swiper.update();
-            swiper.slideTo(index + 1);
           }
+
+          swiper.update(); // Update Swiper
+          swiper.slideTo(index, 0); // Go to the clicked image
 
           overlay.style.display = 'block';
         });
