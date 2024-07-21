@@ -175,7 +175,7 @@ video {
 /* Default size for the dropdown button */
 .dropdown button {
   padding: 10px 20px;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .dropdown-left {
@@ -213,7 +213,7 @@ video {
 @media (max-width: 600px) {
   .dropdown button {
     padding: 8px 16px; /* Adjust padding for small devices */
-    font-size: 14px; /* Adjust font size for small devices */
+    font-size: 12px; /* Adjust font size for small devices */
   }
   .dropdown-left {
     padding-left: 10px; /* Add padding to the left for the left dropdown */
