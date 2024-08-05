@@ -9,7 +9,7 @@ html {
 }
 
 .hero {
-  background-image: url('../../img/IMG_2300_3.JPG');
+  background-image: url('../../img/E237D696.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -138,7 +138,7 @@ video {
 
 @media (max-width: 600px) {
   .hero {
-    height: 80vh; /* Adjust height for small devices */
+    height: 75vh; /* Adjust height for small devices */
   }
 }
 
